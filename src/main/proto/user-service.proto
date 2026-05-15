@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+import "constants/util.proto";
+
+option java_multiple_files = true;
+option java_package = "com.app.employee";
+
+message UserRequest {
+  string user_id = 1;
+}
+
+message UserResponse {
+  string user_id = 1;
+  string first_name = 2;
+  string last_name = 3;
+  string email = 4;
+  string phone = 5;
+  string address = 6;
+  string city = 7;
+  string state = 8;
+  string country = 9;
+  string zip_code = 10;
+  string role = 11;
+  string status = 12;
+}
+
+service UserService {
+  rpc getUser(UserRequest) returns (UserResponse) {};
+}
